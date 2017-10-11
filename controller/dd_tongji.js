@@ -13,14 +13,14 @@ exports.selectList = function(req, res) {
 		console.log('[SELECT ERROR] - ' , error.message);
 		res.end(JSON.stringify(error.message));
 	};
-	
-	res.end(JSON.stringify(results));
+	var jsonString = {status:1 , data:results};
+	res.end(JSON.stringify(jsonString));
 	});
 }
 
 //根据ID查询结果集
 exports.selectById = function(req , res , next) {
-	
+
 	var params = url.parse(req.url , true).query;
 	var id = params.id;
 	//定义SQL语句
@@ -35,8 +35,8 @@ exports.selectById = function(req , res , next) {
 			console.log('[SELECT ERROR] - ' , error.message);
 			res.end(JSON.stringify(error.message));
 		}
-		
-		res.end(JSON.stringify(results));
+		var jsonString = {status:1 , data:results};
+	 	res.end(JSON.stringify(jsonString));
 	});
 }
 
@@ -65,7 +65,8 @@ exports.addOne = function(req , res) {
 			res.end(JSON.stringify(error.message));
 		}
 		
-		res.end(JSON.stringify(results));
+		var jsonString = {status:1 , data:results};
+		res.end(JSON.stringify(jsonString));
 	});
 }
 
@@ -84,7 +85,8 @@ exports.deleteById = function(req , res) {
 			res.end(JSON.stringify(error.message));
 		}
 		
-		res.end(JSON.stringify(results));
+		var jsonString = {status:1 , data:results};
+		res.end(JSON.stringify(jsonString));
 	});
 }
 
@@ -113,7 +115,8 @@ exports.updateById = function(req , res) {
 			res.end(JSON.stringify(error.message));
 		}
 		
-		res.end(JSON.stringify(results));
+		var jsonString = {status:1 , data:results};
+		res.end(JSON.stringify(jsonString));
 	});
 }
 
