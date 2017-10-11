@@ -1,4 +1,4 @@
-﻿var express = require('express');
+var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -48,6 +49,7 @@ var errorData_500 = {
     status: '500', 
     msg: 'Not Found!',
 };
+
 app.use(function(err, req, res, next) {
   errorData_500.msg =  err.message;
   res.end(JSON.stringify(errorData_500));
