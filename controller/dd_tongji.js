@@ -14,7 +14,7 @@ exports.selectList = function(req, res) {
 		res.end(JSON.stringify(error.message));
 	};
 	var jsonString = {status:1 , data:results};
-	res.end(JSON.stringify(results));
+	res.end(JSON.stringify(jsonString));
 	});
 }
 
