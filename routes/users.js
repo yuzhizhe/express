@@ -1,5 +1,5 @@
 ﻿var express = require('express');
-var dd_tongji = require('../controller/dd_tongji.js'); //引入自定义模块
+var dd_tongji = require('../controllers/dd_tongji.js'); //引入自定义模块
 var router = express.Router();
 
 var dataSuccess = {
